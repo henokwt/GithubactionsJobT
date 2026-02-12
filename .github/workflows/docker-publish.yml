@@ -33,6 +33,8 @@ jobs:
       id-token: write
 
     steps:
+      - name: Set image name lowercase
+        run: echo "IMAGE_NAME_LC=${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
       - name: Checkout repository
         uses: actions/checkout@v4
 
